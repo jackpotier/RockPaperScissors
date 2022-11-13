@@ -1,21 +1,20 @@
 function getComputerChoice(){
     options = ['rock','paper','scissors'];
     window.ComputerSelection = options[Math.floor(Math.random()*options.length)];
-    console.log(ComputerSelection);
 }
-getComputerChoice();
 
 function getPlayerChoice(){
     var PlayerChoice = prompt("Please choose rock, paper or scissors");
     PlayerSelection = PlayerChoice.toLowerCase();
-    console.log(PlayerChoice);
 };
-getPlayerChoice();
 
 playerCount = Number(0);
 computerCount = Number(0);
+round = Number(1);
 
 function playRound(PlayerSelection, ComputerSelection) {
+    round+=1;
+    console.log("You chose",PlayerSelection,"and the computer chose",ComputerSelection);
     if (PlayerSelection == ComputerSelection){
         console.log("Draw!");
     }
@@ -50,17 +49,21 @@ function playRound(PlayerSelection, ComputerSelection) {
         }
     }
 }
-while (playerCount <6 && computerCount <6){
+
+while (playerCount <5 && computerCount <5){
+    console.log("Round",round);
+    getComputerChoice();
+    getPlayerChoice();
     playRound(PlayerSelection, ComputerSelection);
     console.log("Your score is", playerCount,"and the computer's score is",computerCount);
 }
 
 if (playerCount >=5){
-    console.log("You won, congrats!");
+    console.log("You were the first to 5 points, congrats!");
 }
 
 if (computerCount >=5){
-    console.log("You lost, what a bummer!")
+    console.log("The computer was the first to 5 points, what a bummer!")
 }
 
 
