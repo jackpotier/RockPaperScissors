@@ -1,9 +1,20 @@
 function getComputerChoice(){
-    options = ['rock','paper','scissors']
-    var OptionPicked = options[Math.floor(Math.random()*options.length)];
+    options = ['rock','paper','scissors'];
+    window.ComputerSelection = options[Math.floor(Math.random()*options.length)];
+    console.log(ComputerSelection);
 }
+getComputerChoice();
 
 function getPlayerChoice(){
-    let PlayerChoice = prompt("Choose rock, paper or scissors")
-    PlayerChoice = PlayerChoice.toLowerCase()
+    var PlayerChoice = prompt("Please choose rock, paper or scissors");
+    PlayerSelection = PlayerChoice.toLowerCase();
+    console.log(PlayerSelection)
+};
+getPlayerChoice();
+
+
+function playRound(PlayerSelection, ComputerSelection) {
+    if (PlayerSelection == ComputerSelection){
+        console.log("Draw!");
+    }
 }
