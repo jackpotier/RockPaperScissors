@@ -4,6 +4,6 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    let playerChoice = prompt("Choose rock, paper or scissors")
+    let PlayerChoice = prompt("Choose rock, paper or scissors")
     PlayerChoice = PlayerChoice.toLowerCase()
 }
