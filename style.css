@@ -5,5 +5,9 @@ body {
 }
 
 .button_row{
-
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100vw;
+    justify-content: center;
 }
