@@ -5,9 +5,9 @@ function getComputerChoice(){
 
 function playRound(){
     //Set starting variables
-    roundNumber = 1;
-    playerCount = 0;
-    computerCount = 0;
+    var roundNumber = 1;
+    var playerCount = 0;
+    var computerCount = 0;
 
     // availableChoices is a node list. It looks and acts much like an array.
     const availableChoices = document.querySelectorAll('button');
@@ -24,10 +24,8 @@ function playRound(){
             //The computer's choice is selected
             getComputerChoice();
 
-            //Console log round information for developers sake
+            //Console.log() round information for coding purposes (PART 1)
             console.log("Round",roundNumber)
-            console.log("Player chooses:",playerSelection);
-            console.log("Computer chooses:",computerSelection);
 
             //Run through win/loss logic
             if (playerSelection == computerSelection){
@@ -63,9 +61,24 @@ function playRound(){
                     computerCount+=1;
                 }
             }
-            //Show both scores for developers sake
-            console.log("Player's score is:",playerCount);
-            console.log("Computer's score is:",computerCount);
+            //Console.log() round information for coding purposes (PART 2)
+            console.log(playerCount,"vs",computerCount);
+
+            //Display the results
+            let results = document.querySelector('#results');
+            let roundValue = document.createElement('div');
+            roundValue.classList.add('infobox');
+            roundValue.textContent = "Round: "+roundNumber;
+            let playerScore = document.createElement('div');
+            playerScore.classList.add('infobox');
+            playerScore.textContent = "Player's score: "+playerCount;
+            let computerScore = document.createElement('div');
+            computerScore.classList.add('infobox');
+            computerScore.textContent = "Computer's score "+computerCount;
+            //Call the new divs containing round information
+            results.appendChild(roundValue)
+            results.appendChild(playerScore);
+            results.appendChild(computerScore);
             //Next round is generated
             roundNumber+=1;
         });
