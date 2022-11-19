@@ -64,21 +64,26 @@ function playRound(){
             //Console.log() round information for coding purposes (PART 2)
             console.log(playerCount,"vs",computerCount);
 
-            //Display the results
-            let results = document.querySelector('#results');
-            let roundValue = document.createElement('div');
-            roundValue.classList.add('infobox');
-            roundValue.textContent = "Round: "+roundNumber;
-            let playerScore = document.createElement('div');
-            playerScore.classList.add('infobox');
-            playerScore.textContent = "Player's score: "+playerCount;
-            let computerScore = document.createElement('div');
-            computerScore.classList.add('infobox');
-            computerScore.textContent = "Computer's score "+computerCount;
-            //Call the new divs containing round information
-            results.appendChild(roundValue)
-            results.appendChild(playerScore);
-            results.appendChild(computerScore);
+            function displayResults(){
+                //Display the results
+                let results = document.querySelector('#results');
+                let roundValue = document.createElement('div');
+                roundValue.classList.add('infobox');
+                roundValue.textContent = "Round: "+roundNumber;
+                let playerScore = document.createElement('div');
+                playerScore.classList.add('infobox');
+                playerScore.textContent = "Player's score: "+playerCount;
+                let computerScore = document.createElement('div');
+                computerScore.classList.add('infobox');
+                computerScore.textContent = "Computer's score "+computerCount;
+                
+                //Call the new divs containing round information
+                results.appendChild(roundValue);
+                results.appendChild(playerScore);
+                results.appendChild(computerScore);
+            }
+            displayResults();
+
             //Next round is generated
             roundNumber+=1;
         });
