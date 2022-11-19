@@ -66,20 +66,14 @@ function playRound(){
 
             function displayResults(){
                 //Display the results
-                let results = document.querySelector('#results');
-                let roundValue = document.createElement('div');
-                roundValue.classList.add('infobox');
-                roundValue.textContent = "Round: "+roundNumber;
-                let playerScore = document.createElement('div');
-                playerScore.classList.add('infobox');
-                playerScore.textContent = "Player's score: "+playerCount;
-                let computerScore = document.createElement('div');
-                computerScore.classList.add('infobox');
-                computerScore.textContent = "Computer's score "+computerCount;
-                
-                //Call the new divs containing round information
+                let roundValue = document.querySelector('#roundValue');
+                roundValue.textContent = "Round "+roundNumber;
                 results.appendChild(roundValue);
+                let playerScore = document.querySelector('#playerScore');
+                playerScore.textContent = "Your score: "+playerCount;
                 results.appendChild(playerScore);
+                let computerScore = document.querySelector('#computerScore');
+                computerScore.textContent = "Computer's score: "+computerCount;
                 results.appendChild(computerScore);
             }
             displayResults();
