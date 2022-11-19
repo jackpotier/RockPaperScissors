@@ -28,55 +28,48 @@ function playRound(){
             console.log("Round",roundNumber)
 
             //Run through win/loss logic
-            if (playerSelection == computerSelection){
-                console.log("Draw!");
-            }
             if (computerSelection == 'rock'){
                 if (playerSelection == 'paper'){
-                    console.log("You Win!",playerSelection,"beats",computerSelection);
                     playerCount+=1;
                 }
                 if (playerSelection == 'scissors'){
-                    console.log("You Lose!",computerSelection,"beats",playerSelection);
                     computerCount+=1;
                 }
             }
             if (computerSelection == 'paper'){
                 if (playerSelection == 'scissors'){
-                    console.log("You Win!",playerSelection,"beats",computerSelection);
                     playerCount+=1;
                 }
                 if (playerSelection == 'rock'){
-                    console.log("You Lose!",computerSelection,"beats",playerSelection);
                     computerCount+=1;
                 }
             }
             if (computerSelection == 'scissors'){
                 if (playerSelection == 'rock'){
-                    console.log("You Win!",playerSelection,"beats",computerSelection);
                     playerCount+=1;
                 }
                 if (playerSelection == 'paper'){
-                    console.log("You Lose!",computerSelection,"beats",playerSelection);
                     computerCount+=1;
                 }
             }
-            //Console.log() round information for coding purposes (PART 2)
-            console.log(playerCount,"vs",computerCount);
 
             function displayResults(){
+
                 //Change the round number
                 let roundValue = document.querySelector('#roundValue');
                 roundValue.textContent = "Round "+roundNumber;
                 results.appendChild(roundValue);
+
                 //Change the displaying text about the round information
                 let talk = document.querySelector('#talk')
                 talk.textContent = "You chose "+playerSelection+" and the computer chose "+computerSelection;
                 results.appendChild(talk);
+
                 //Change the player's score
                 let playerScore = document.querySelector('#playerScore');
                 playerScore.textContent = "Your score: "+playerCount;
                 results.appendChild(playerScore);
+
                 //Change the computer's score
                 let computerScore = document.querySelector('#computerScore');
                 computerScore.textContent = "Computer's score: "+computerCount;
