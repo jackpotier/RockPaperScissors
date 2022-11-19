@@ -65,13 +65,19 @@ function playRound(){
             console.log(playerCount,"vs",computerCount);
 
             function displayResults(){
-                //Display the results
+                //Change the round number
                 let roundValue = document.querySelector('#roundValue');
                 roundValue.textContent = "Round "+roundNumber;
                 results.appendChild(roundValue);
+                //Change the displaying text about the round information
+                let talk = document.querySelector('#talk')
+                talk.textContent = "You chose "+playerSelection+" and the computer chose "+computerSelection;
+                results.appendChild(talk);
+                //Change the player's score
                 let playerScore = document.querySelector('#playerScore');
                 playerScore.textContent = "Your score: "+playerCount;
                 results.appendChild(playerScore);
+                //Change the computer's score
                 let computerScore = document.querySelector('#computerScore');
                 computerScore.textContent = "Computer's score: "+computerCount;
                 results.appendChild(computerScore);
